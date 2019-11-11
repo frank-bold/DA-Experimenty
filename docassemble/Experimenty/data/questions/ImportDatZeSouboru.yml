@@ -1,0 +1,18 @@
+---
+objects:
+  - data: DAFile
+---
+question: |
+  Nahrajte soubor z předchozího interview.
+fields:
+  - Soubor: data
+    datatype: file
+---
+code: |
+  people = objects_from_file(data.slurp())
+---
+mandatory: true
+question: |
+  Vaše data
+subquestion: |
+  ${ people }

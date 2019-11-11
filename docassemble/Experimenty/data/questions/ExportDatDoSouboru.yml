@@ -1,0 +1,32 @@
+event: query_variables
+code: |
+  variables_as_json()
+---
+objects:
+  - osoba: Individual
+---
+mandatory: True
+question: |
+  Něco uvěďte
+fields:
+  - Jméno a příjmení: osoba.name.text
+  - Datum narození: osoba.birthday
+    datatype: date
+  - Cokoli: cokoli
+    datatype: area
+  - Vyberte pole: pole
+    input type: radio
+    choices:
+      - Jedna
+      - Dva
+      - Tři
+---
+mandatory: True
+question: |
+  přehled odpovědí
+subquestion: |
+  Use
+  [this link](${ interview_url_action('query_variables') })
+  to query the information from
+  another application.
+
